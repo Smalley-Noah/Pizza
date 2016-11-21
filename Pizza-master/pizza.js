@@ -1,41 +1,28 @@
 class pizza{
   //type constructor below
-constructor(s,m,l,xl){
-  this.size = s
-  this.meattoppings = mt
-  this.veggietoppings = vt
+constructor(s,mt,vt){
+  this.size = s; //array ["s","m","L","xL"]
+  this.meatToppings = mt;
+  this.veggietoppings = vt;
 }
-  //type instance functions below
-  sizecost(){
-  if(this.size == "small"){
-    return 7.99
-  }
-  else if(this.size == "Medium"){
-    return 9.99
-  }
-  else if(this.size == "Large"){
-    return 12.99
-  }
-  else if(this.size == "Extra Large"){
-    return 15.99
-  }
+sizeCost(){
+  this.size(S) = 7.99
+  this.size(M) = 9.99
+  this.size(L) = 12.99
+  this.size(XL) = 15.99
 }
-
-this.toppingcost(top){
-  if(top = "meat"){
-    return(this.meattoppings*.length * .99);
+toppingCost(top){
+  if(top == this.meatToppings){
+    return top.length*.99;
   }
-  if(top = "veggie"){
-    return(this.veggietoppings*.length * .50);
+  if(top == this.veggieToppings){
+    return top.length*.5;
   }
-}
-this.price(){
-  this.price = this.sizecost() + this.toppingcost();
-  return this.price;
-}
-  //type class functions below
-this.promotionaldeal(Pizza, percent){
-
-}
-
+  price(){
+    return sizeCost + toppingCost[0] + toppingCost[1];
+  }
+  static promotionalDeal(pizza,percent){
+    var precent = 1-(percent/100);
+    return pizza.price()*percent;
+  }
 }
